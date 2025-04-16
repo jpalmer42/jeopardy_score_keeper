@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:jeopardy_score_keeper/domain.dart';
 
 class PlayBoard extends StatefulWidget {
   const PlayBoard({super.key});
@@ -8,6 +9,14 @@ class PlayBoard extends StatefulWidget {
 }
 
 class _PlayBoardState extends State<PlayBoard> {
+  late GameInfo _gameInfo;
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -27,7 +36,23 @@ class _PlayBoardState extends State<PlayBoard> {
         ],
       ),
       body: SafeArea(
-        child: Text("Hi"),
+        child: Container(
+          width: double.infinity,
+          height: double.infinity,
+          padding: EdgeInsets.all(12),
+          decoration: BoxDecoration(
+            border: Border.all(
+              color: Colors.blue,
+              width: 2,
+            ),
+          ),
+          child: Column(children: [
+            Text("Single Jeopardy"),
+            Row(
+              children: [],
+            ),
+          ]),
+        ),
       ),
     );
   }
